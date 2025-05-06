@@ -1,0 +1,151 @@
+ Core Modules & Features
+
+ 1. Authentication & User Management
+
+* User Registration / Login (JWT or Sanctum-based auth)
+* Forgot/Reset Password
+* Email verification
+* Role & Permission Management (Admin, Staff, Customer)
+* Activity logs / Login history
+
+
+
+ 2. Dashboard
+
+* Overview of KPIs (Total Clients, Open Tickets, Open Tasks, Invoices, Projects)
+* Recent Activities
+* Quick Actions
+* Notifications
+
+
+
+ 3. Customers / Clients
+
+* List, Add, Edit, Delete clients
+* View client details
+* Client contacts (multiple contacts per client)
+* Client notes and files
+* Customer login (portal)
+
+
+
+ 4. Leads Management
+
+* Capture leads
+* Assign leads to staff
+* Lead stages (New, Contacted, Qualified, etc.)
+* Notes, emails, and call logs
+* Lead conversion to client
+* Import/Export leads
+
+
+
+ 5. Projects & Tasks
+
+ Projects
+
+* Create/Edit/Delete projects
+* Assign staff and clients
+* Project status, deadlines, milestones
+* Files, notes, and time tracking
+
+ Tasks
+
+* Create/Edit/Delete tasks
+* Assign staff
+* Due dates, priorities, comments
+* Checklists / Subtasks
+* Time tracking
+
+
+
+ 6. Invoices & Payments
+
+* Create/Edit/Delete invoices
+* Recurring invoices
+* PDF generation and sending by email
+* Payment tracking
+* Payment gateways (Stripe, PayPal — future integration)
+* Partial payments and logs
+
+
+
+ 7. Estimates & Proposals
+
+ Estimates
+
+* Create/Edit/Delete estimates
+* Convert to invoice
+* Send via email, track status (Accepted, Declined)
+
+ Proposals
+
+* Create/Edit proposals
+* Proposal templates
+* Send to clients for approval
+
+
+
+ 8. Support Tickets
+
+* Client-staff ticket system
+* Departments & Priorities
+* Ticket status tracking (Open, In Progress, Closed)
+* Internal notes and replies
+* Attachments
+
+
+
+ 9. Contracts
+
+* Contract templates
+* Assign to clients
+* Expiry/reminder system
+* Signatures (optional integration)
+
+
+
+ 10. Expenses
+
+* Track internal expenses
+* Assign to projects or categories
+* Recurring expenses
+* Vendor management
+
+
+
+ 11. Knowledge Base
+
+* Public and private articles
+* Category management
+* Search functionality
+* Feedback system (Was this article helpful?)
+
+
+
+ 12. Reports & Analytics
+
+* Sales reports
+* Project performance
+* Invoice/payment summary
+* Staff productivity
+* Lead conversion
+
+
+
+ 13. Settings
+
+* Company settings (Logo, name, contact)
+* Email configuration
+* Currency & Tax settings
+* Cron job setup (for reminders, recurring jobs)
+* Modules management (enable/disable features)
+
+
+
+Roles & Permissions (RBAC)
+
+* **Admin:** Full access
+* **Staff:** Scoped access (based on roles/assignments)
+* **Client:** Portal view only (projects, invoices, proposals, tickets)
+
