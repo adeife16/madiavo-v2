@@ -17,4 +17,9 @@ class Client extends Model
         'longitude', 'latitude', 'default_language', 'default_currency',
         'show_primary_contact', 'stripe_id', 'registration_confirmed', 'addedfrom'
     ];
+
+    public function contacts()
+    {
+        return $this->hasMany(ClientContact::class);
+    }
 }
