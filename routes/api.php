@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,5 +36,14 @@ Route::middleware('auth:sanctum')->prefix('profile')->group(function () {
     Route::get('/', [ProfileController::class, 'show']);
     Route::put('/', [ProfileController::class, 'update']);
     Route::put('/password', [ProfileController::class, 'updatePassword']);
+});
+
+// Clients
+Route::middleware('auth:sanctum')->prefix('clients')->group(function () {
+    Route::get('/', [ClientController::class, 'index']);
+    Route::post('/', [ClientController::class, 'store']);
+    Route::get('/{id}', [ClientController::class, 'show']);
+    Route::put('/{id}', [ClientController::class, 'update']);
+    Route::delete('/{id}', [ClientController::class, 'destroy']);
 });
 
