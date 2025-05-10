@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\ClientsImport;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ClientController extends Controller
 {
@@ -45,6 +47,26 @@ class ClientController extends Controller
             'message' => 'Client added successfully',
             'client' => $client,
         ], 201);
+    }
+
+    public function importFromCSV(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|file|mimes:csv,txt,xlsx,xls',
+        ]);
+
+        $import = new ClientsImport;
+        Excel::import($import, $request->file('file'));
+
+        if (! empty($import->imported)) {
+            DB::table('clients')->insert($import->imported);
+        }
+
+        return response()->json([
+            'message' => 'Import completed',
+            'imported' => count($import->imported),
+            'failed' => $import->errors,
+        ]);
     }
 
     public function show($id)
