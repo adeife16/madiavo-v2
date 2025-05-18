@@ -1,0 +1,4 @@
+name,email,phone,company,website,address,position,country,status,city,state,zip,language,is_public,description,value,converted_to_client,contacted_at,tags
+John Doe,john@example.com,1234567890,Company A,https://companya.com,123 Main St,Manager,120,New,New York,New York,12345,English,Yes,,1000,Yes,facebook,
+Mark Wal,mark@example.com,987654321,Company B,https://companyb.com,456 Elm St,Developer,180,New,Los Angeles,California,67890,English,Yes,,2000,Yes,google,
+Janet Wilson,janet@example.com,1122334455,Company C,https://companyc.com,789 Oak St,CEO,100,New,Chicago,Illinois,12345,English,Yes,,3000,Yes,twitter,

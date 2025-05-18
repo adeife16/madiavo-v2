@@ -30,4 +30,4 @@ RUN chown -R www-data:www-data /var/www \
 EXPOSE 8080
 
 # Run migrations and start Laravel server using the Render port
-CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT}
+CMD php artisan migrate --force && php artisan db:seed && php artisan serve --host=0.0.0.0 --port=${PORT}
