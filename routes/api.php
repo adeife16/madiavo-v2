@@ -3,9 +3,12 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\LeadController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\LeadController;
+use App\Http\Controllers\SettingController;
+// use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +57,10 @@ Route::middleware('auth:sanctum')->prefix('countries')->group(function () {
     Route::get('/', [CountryController::class, 'index']);
 });
 
+// Currency
+Route::middleware('auth:sanctum')->prefix('currency')->group(function () {
+    Route::get('/', [CurrencyController::class, 'index']);
+});
 
 // Leads
 Route::middleware('auth:sanctum')->group(function () {
@@ -64,3 +71,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/leads/{lead}', [LeadController::class, 'destroy']);
     Route::post('/leads/import', [LeadController::class, 'import']);
 });
+
+// Settings
+// Route::middleware(['auth:sanctum', 'admin'])->prefix('settings')->group(function () {
+//     Route::get('/', [SettingController::class, 'index']);
+//     Route::get('/{key}', [SettingController::class, 'show']);
+//     Route::post('/', [SettingController::class, 'update']);
+// });

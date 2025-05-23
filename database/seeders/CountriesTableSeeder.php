@@ -9,6 +9,10 @@ class CountriesTableSeeder extends Seeder
 {
     public function run()
     {
+        if (DB::table('countries')->count() > 0) {
+            return;
+        }
+
         $countries = [
             ['id' => '1', 'iso2' => 'AF', 'short_name' => 'Afghanistan', 'long_name' => 'Islamic Republic of Afghanistan', 'iso3' => 'AFG', 'num_code' => '004', 'un_member' => 'yes', 'calling_code' => '93', 'cctld' => '.af'],
             ['id' => '2', 'iso2' => 'AX', 'short_name' => 'Aland Islands', 'long_name' => '&Aring;land Islands', 'iso3' => 'ALA', 'num_code' => '248', 'un_member' => 'no', 'calling_code' => '358', 'cctld' => '.ax'],

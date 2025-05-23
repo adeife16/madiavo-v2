@@ -6,6 +6,7 @@ use App\Imports\ClientsImport;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
@@ -36,6 +37,8 @@ class ClientController extends Controller
             'shipping_state' => 'nullable|string|max:100',
             'shipping_zip' => 'nullable|string|max:100',
             'shipping_country' => 'nullable|integer',
+            'group_id' => 'nullable|integer',
+
             // Add other fields as needed
         ]);
 
